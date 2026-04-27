@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patricia Sandhu — Finance & Operations Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#08080f;--ink2:#0d0d1a;--ink3:#14142a;
+  --gold:#c9a84c;--gold2:#e8c96a;--gold-pale:#fdf6e3;--gold-dim:rgba(201,168,76,.15);
+  --cream:#faf8f4;--white:#fff;--muted:#8a8a9e;--light:#f0ede8;
+  --shadow:0 8px 40px rgba(8,8,15,.18);--shadow-sm:0 2px 12px rgba(8,8,15,.1);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;}
+
+/* ── NAVIGATION ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;transition:all .3s;}
+nav.scrolled{background:rgba(8,8,15,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.15);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold);letter-spacing:.02em;text-decoration:none;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;transition:.2s;font-weight:500;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--ink);padding:9px 20px;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:.2s;}
+.nav-cta:hover{background:var(--gold2);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:22px;height:2px;background:var(--gold);}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(8,8,15,.98);padding:20px 5%;flex-direction:column;gap:0;border-top:1px solid rgba(201,168,76,.15);}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:16px 0;font-size:.85rem;color:rgba(255,255,255,.7);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.05);}
+  .mobile-menu a:hover{color:var(--gold);}
+}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 5% 60px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,168,76,.07) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(201,168,76,.04) 0%,transparent 50%);pointer-events:none;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.hero-left{animation:slideUp .8s ease both;}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.hero-line{width:40px;height:1px;background:var(--gold);}
+.hero-eyebrow span{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,4.5rem);font-weight:900;line-height:1.02;margin-bottom:16px;}
+.hero-name .first{display:block;color:rgba(255,255,255,.9);}
+.hero-name .last{display:block;color:var(--gold);}
+.hero-title{font-size:1rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.7;margin-bottom:32px;max-width:420px;}
+.hero-title strong{color:rgba(255,255,255,.8);font-weight:500;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
+.hero-tag{padding:6px 14px;border:1px solid rgba(201,168,76,.3);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:500;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{background:var(--gold);color:var(--ink);padding:14px 28px;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:.2s;display:inline-block;}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-1px);}
+.btn-outline{border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.75);padding:14px 28px;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:.2s;display:inline-block;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.hero-right{animation:slideUp .8s .2s ease both;}
+.stats-card{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.12);padding:32px;backdrop-filter:blur(8px);}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,.1);}
+.stat-item{background:rgba(8,8,15,.8);padding:24px 20px;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:900;color:var(--gold);line-height:1;}
+.stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:6px;}
+.stat-sub{font-size:.75rem;color:rgba(255,255,255,.6);margin-top:4px;}
+.available-badge{display:flex;align-items:center;gap:10px;margin-top:24px;padding:14px 16px;background:rgba(76,175,125,.08);border:1px solid rgba(76,175,125,.2);}
+.badge-dot{width:8px;height:8px;background:#4caf7d;border-radius:50%;animation:pulse 2s infinite;}
+.badge-text{font-size:.78rem;color:rgba(255,255,255,.7);}
+.badge-text strong{color:#4caf7d;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+}
+
+/* ── SECTIONS ── */
+section{padding:90px 5%;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.section-line{width:32px;height:1px;background:var(--gold);}
+.section-eyebrow span{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:8px;}
+.section-sub{font-size:.9rem;color:rgba(255,255,255,.45);max-width:560px;line-height:1.7;margin-bottom:48px;}
+
+/* ── ABOUT ── */
+#about{background:var(--ink2);}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:start;}
+.about-body{font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.9;}
+.about-body p{margin-bottom:16px;}
+.about-body strong{color:rgba(255,255,255,.85);font-weight:600;}
+.about-highlights{display:flex;flex-direction:column;gap:16px;}
+.highlight-item{display:flex;align-items:flex-start;gap:14px;padding:18px;border:1px solid rgba(201,168,76,.1);background:rgba(201,168,76,.03);}
+.highlight-icon{font-size:1.2rem;flex-shrink:0;margin-top:2px;}
+.highlight-text{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.6;}
+.highlight-text strong{color:var(--gold);display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;}}
+
+/* ── EXPERTISE ── */
+#expertise{background:var(--ink);}
+.expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.08);}
+.expertise-card{background:var(--ink);padding:32px 28px;transition:.3s;cursor:default;position:relative;overflow:hidden;}
+.expertise-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:.3s;transform-origin:left;}
+.expertise-card:hover{background:rgba(201,168,76,.04);}
+.expertise-card:hover::before{transform:scaleX(1);}
+.exp-icon{font-size:1.6rem;margin-bottom:16px;}
+.exp-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;margin-bottom:10px;color:white;}
+.exp-body{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:16px;}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.exp-tag{font-size:.62rem;padding:3px 8px;background:rgba(201,168,76,.1);color:var(--gold);letter-spacing:.06em;text-transform:uppercase;font-weight:600;}
+@media(max-width:768px){.expertise-grid{grid-template-columns:1fr;}}
+@media(max-width:1024px){.expertise-grid{grid-template-columns:1fr 1fr;}}
+
+/* ── EXPERIENCE ── */
+#experience{background:var(--ink2);}
+.exp-timeline{position:relative;padding-left:28px;}
+.exp-timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:rgba(201,168,76,.2);}
+.timeline-item{position:relative;margin-bottom:48px;}
+.timeline-item::before{content:'';position:absolute;left:-33px;top:8px;width:10px;height:10px;background:var(--gold);border-radius:50%;}
+.tl-header{margin-bottom:12px;}
+.tl-role{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:white;}
+.tl-company{font-size:.82rem;color:var(--gold);font-weight:600;letter-spacing:.06em;margin-top:3px;}
+.tl-dates{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:4px;letter-spacing:.06em;}
+.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.tl-bullets li{font-size:.85rem;color:rgba(255,255,255,.58);line-height:1.6;padding-left:16px;position:relative;}
+.tl-bullets li::before{content:'—';position:absolute;left:0;color:var(--gold);font-weight:300;}
+.tl-skills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+.tl-skill{font-size:.62rem;padding:3px 9px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase;}
+
+/* ── EDUCATION ── */
+#education{background:var(--ink);}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.edu-card{border:1px solid rgba(201,168,76,.12);padding:28px;position:relative;overflow:hidden;transition:.3s;}
+.edu-card::after{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--gold);}
+.edu-card:hover{border-color:rgba(201,168,76,.3);background:rgba(201,168,76,.03);}
+.edu-degree{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;margin-bottom:6px;}
+.edu-school{font-size:.82rem;color:var(--gold);font-weight:600;letter-spacing:.06em;margin-bottom:4px;}
+.edu-dates{font-size:.75rem;color:rgba(255,255,255,.35);margin-bottom:12px;}
+.edu-detail{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6;}
+.edu-badge{display:inline-block;margin-top:10px;padding:4px 10px;background:rgba(76,175,125,.1);border:1px solid rgba(76,175,125,.2);font-size:.65rem;color:#4caf7d;letter-spacing:.1em;text-transform:uppercase;font-weight:600;}
+@media(max-width:768px){.edu-grid{grid-template-columns:1fr;}}
+
+/* ── SKILLS ── */
+#skills{background:var(--ink2);}
+.skills-outer{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.skills-group-title{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,.15);}
+.skill-row{margin-bottom:18px;}
+.skill-top{display:flex;justify-content:space-between;margin-bottom:6px;}
+.skill-name{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.8);}
+.skill-pct{font-size:.75rem;color:var(--gold);}
+.skill-bar{height:3px;background:rgba(255,255,255,.07);}
+.skill-fill{height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width 1s ease;}
+.soft-skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+.soft-skill{padding:8px 16px;border:1px solid rgba(255,255,255,.1);font-size:.78rem;color:rgba(255,255,255,.6);transition:.2s;}
+.soft-skill:hover{border-color:var(--gold);color:var(--gold);}
+@media(max-width:768px){.skills-outer{grid-template-columns:1fr;}}
+
+/* ── CAPABILITIES ── */
+#capabilities{background:var(--ink3);}
+.cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.cap-card{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.1);padding:28px;transition:.3s;position:relative;overflow:hidden;}
+.cap-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);opacity:0;transition:.3s;}
+.cap-card:hover{border-color:rgba(201,168,76,.28);background:rgba(201,168,76,.04);}
+.cap-card:hover::before{opacity:1;}
+.cap-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.cap-icon{font-size:1.5rem;}
+.cap-source{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600;padding:3px 10px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.06);}
+.cap-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:white;margin-bottom:10px;line-height:1.3;}
+.cap-body{font-size:.83rem;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:16px;}
+.cap-examples{margin-top:auto;}
+.cap-ex-label{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:8px;}
+.cap-ex-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.cap-tag{font-size:.62rem;padding:3px 9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);letter-spacing:.05em;}
+@media(max-width:768px){.cap-grid{grid-template-columns:1fr;}}
+
+/* ── VOLUNTEERING ── */
+#volunteering{background:var(--ink);}
+.vol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.vol-card{padding:24px;border:1px solid rgba(255,255,255,.07);transition:.3s;}
+.vol-card:hover{border-color:rgba(201,168,76,.25);background:rgba(201,168,76,.03);}
+.vol-role{font-weight:600;font-size:.9rem;margin-bottom:4px;}
+.vol-org{font-size:.78rem;color:var(--gold);margin-bottom:4px;}
+.vol-dates{font-size:.72rem;color:rgba(255,255,255,.35);margin-bottom:10px;}
+.vol-desc{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.6;}
+@media(max-width:768px){.vol-grid{grid-template-columns:1fr;}}
+@media(max-width:1024px){.vol-grid{grid-template-columns:1fr 1fr;}}
+
+/* ── CONTACT ── */
+#contact{background:var(--ink2);}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.contact-left .section-title{font-size:clamp(1.8rem,4vw,3rem);}
+.contact-tagline{font-size:1rem;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:32px;max-width:420px;}
+.contact-right{display:flex;flex-direction:column;gap:16px;}
+.contact-item{display:flex;align-items:center;gap:16px;padding:20px;border:1px solid rgba(201,168,76,.1);text-decoration:none;transition:.3s;}
+.contact-item:hover{border-color:rgba(201,168,76,.35);background:rgba(201,168,76,.04);}
+.contact-icon{font-size:1.4rem;flex-shrink:0;}
+.contact-info-label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:3px;}
+.contact-info-val{font-size:.9rem;color:rgba(255,255,255,.8);font-weight:500;}
+@media(max-width:768px){.contact-inner{grid-template-columns:1fr;}}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:28px 5%;border-top:1px solid rgba(201,168,76,.1);}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,.3);}
+.footer-name{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:.95rem;font-weight:700;}
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Patricia Sandhu</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://www.linkedin.com/in/patricia-sandhu-0202a9a/" target="_blank" class="nav-cta">LinkedIn ↗</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#expertise" onclick="closeMenu()">Expertise</a>
+  <a href="#capabilities" onclick="closeMenu()">Capabilities</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#education" onclick="closeMenu()">Education</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="https://www.linkedin.com/in/patricia-sandhu-0202a9a/" target="_blank">LinkedIn ↗</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-line"></div>
+        <span>Finance & Operations Professional</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="first">Patricia</span>
+        <span class="last">Sandhu</span>
+      </h1>
+      <p class="hero-title">
+        <strong>15+ years</strong> driving financial clarity, operational excellence, and strategic growth across SaaS, professional services, and technology organizations.
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag">Financial Operations</span>
+        <span class="hero-tag">Revenue Analytics</span>
+        <span class="hero-tag">CS Operations</span>
+        <span class="hero-tag">Process Improvement</span>
+        <span class="hero-tag">NetSuite</span>
+        <span class="hero-tag">Executive Reporting</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#experience" class="btn-primary">View Experience</a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stats-card">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-num">15+</div>
+            <div class="stat-label">Years Experience</div>
+            <div class="stat-sub">Finance & Operations</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">8+</div>
+            <div class="stat-label">Years at eGain</div>
+            <div class="stat-sub">Global SaaS Company</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">MBA</div>
+            <div class="stat-label">In Progress</div>
+            <div class="stat-sub">Illinois Tech · 3.52 GPA</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Remote Ready</div>
+            <div class="stat-sub">Flexible availability</div>
+          </div>
+        </div>
+        <div class="available-badge">
+          <div class="badge-dot"></div>
+          <div class="badge-text"><strong>Available for contract & full-time roles</strong> · Remote preferred</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="section-line"></div><span>About Me</span></div>
+    <h2 class="section-title reveal">The Professional Behind the Numbers</h2>
+    <div class="about-grid reveal">
+      <div class="about-body">
+        <p>I am a <strong>finance and operations professional</strong> with over 15 years of experience across financial operations, customer success operations, project coordination, and accounting. My career has been defined by a rare ability to sit at the intersection of financial precision and operational strategy — translating complex data into decisions that move organizations forward.</p>
+        <p>At <strong>eGain Corporation</strong>, I spent nearly a decade building and leading financial reporting systems, overseeing ARR audits, driving CSM commission integrity, and delivering board-level executive intelligence. I became the connective tissue between finance, customer success, and leadership — the person who made sure the numbers told the right story and that the right people acted on them.</p>
+        <p>I bring <strong>advanced Excel skills, NetSuite expertise, and a data-first mindset</strong> to every engagement. I thrive in environments where accuracy matters, processes need to be built or fixed, and leadership needs someone they can trust with the numbers that drive strategy.</p>
+        <p>Currently completing my <strong>MBA at Illinois Institute of Technology</strong> (GPA 3.52), I am deepening my expertise in business strategy, financial analysis, and organizational leadership — and actively pursuing new opportunities where I can bring senior-level operations expertise to organizations that need it.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <div class="highlight-icon">📊</div>
+          <div class="highlight-text">
+            <strong>Financial Intelligence</strong>
+            ARR forecasting, executive reporting, board-level insights, and revenue analytics that equip leadership to make confident decisions.
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">⚙️</div>
+          <div class="highlight-text">
+            <strong>Operational Excellence</strong>
+            Process design, cross-functional coordination, and systems optimization that eliminate inefficiency and scale with the business.
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🤝</div>
+          <div class="highlight-text">
+            <strong>Stakeholder Partnership</strong>
+            Executive-level communication, stakeholder alignment, and the ability to translate complexity into clarity at every level of the organization.
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🌐</div>
+          <div class="highlight-text">
+            <strong>Remote & Flexible</strong>
+            Proven track record of delivering high-impact results in hybrid and remote environments — available for contract, fractional, and full-time roles.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="section-line"></div><span>Core Expertise</span></div>
+    <h2 class="section-title reveal">What I Do Best</h2>
+    <p class="section-sub reveal">Six areas where I consistently deliver measurable results for organizations.</p>
+    <div class="expertise-grid reveal">
+      <div class="expertise-card">
+        <div class="exp-icon">💰</div>
+        <div class="exp-title">Financial Operations</div>
+        <div class="exp-body">End-to-end financial operations including ARR audits, budget reviews, variance analysis, forecasting, and fund accounting. I ensure numbers are accurate, timely, and actionable.</div>
+        <div class="exp-tags"><span class="exp-tag">ARR Audits</span><span class="exp-tag">Forecasting</span><span class="exp-tag">Variance Analysis</span></div>
+      </div>
+      <div class="expertise-card">
+        <div class="exp-icon">📈</div>
+        <div class="exp-title">Revenue Analytics</div>
+        <div class="exp-body">Translating customer health data, market trends, and attrition signals into forward-looking revenue intelligence. I build the dashboards and briefings that drive growth decisions.</div>
+        <div class="exp-tags"><span class="exp-tag">Revenue Reporting</span><span class="exp-tag">Win/Loss Analysis</span><span class="exp-tag">Churn Mitigation</span></div>
+      </div>
+      <div class="expertise-card">
+        <div class="exp-icon">🎯</div>
+        <div class="exp-title">CS Operations</div>
+        <div class="exp-body">Supporting Customer Success teams with commission integrity, renewal tracking, onboarding accountability, and spiff program oversight. I keep CSM operations running cleanly.</div>
+        <div class="exp-tags"><span class="exp-tag">CSM Commission</span><span class="exp-tag">Renewal Tracking</span><span class="exp-tag">Onboarding</span></div>
+      </div>
+      <div class="expertise-card">
+        <div class="exp-icon">📋</div>
+        <div class="exp-title">Executive Reporting</div>
+        <div class="exp-body">Developing and delivering quarterly board-level reports, weekly executive briefings, and strategic summaries that communicate business trajectory with clarity and precision.</div>
+        <div class="exp-tags"><span class="exp-tag">Board Reports</span><span class="exp-tag">Executive Briefings</span><span class="exp-tag">KPI Dashboards</span></div>
+      </div>
+      <div class="expertise-card">
+        <div class="exp-icon">🔧</div>
+        <div class="exp-title">Process Improvement</div>
+        <div class="exp-body">Identifying operational inefficiencies, building scalable SOPs, and leading cross-functional initiatives that deliver measurable outcomes. I build systems that outlast me.</div>
+        <div class="exp-tags"><span class="exp-tag">SOP Development</span><span class="exp-tag">Cross-functional</span><span class="exp-tag">KPI Tracking</span></div>
+      </div>
+      <div class="expertise-card">
+        <div class="exp-icon">📒</div>
+        <div class="exp-title">Accounting & Compliance</div>
+        <div class="exp-body">Full AP cycle, month-end close, reconciliations, audit readiness, and GAAP-compliant financial records. I've managed high-volume domestic and international wire transfers with precision.</div>
+        <div class="exp-tags"><span class="exp-tag">NetSuite</span><span class="exp-tag">AP/AR</span><span class="exp-tag">Audit Readiness</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="section-line"></div><span>Work History</span></div>
+    <h2 class="section-title reveal">Professional Experience</h2>
+    <p class="section-sub reveal">A track record built across finance, operations, and customer success at leading technology organizations.</p>
+    <div class="exp-timeline reveal">
+
+      <div class="timeline-item">
+        <div class="tl-header">
+          <div class="tl-role">WW CSM Operations Admin</div>
+          <div class="tl-company">eGain Corporation · Full-time</div>
+          <div class="tl-dates">April 2021 — August 2024 · Sunnyvale, CA (Hybrid)</div>
+        </div>
+        <ul class="tl-bullets">
+          <li>Oversaw monthly ARR audits covering allocation accuracy and CSM commission integrity, ensuring financial reporting met the highest standards of precision</li>
+          <li>Served as executive finance partner for customer renewals, driving stakeholder alignment and accelerating complex financial processes</li>
+          <li>Translated customer health data into forward-looking ARR forecasts, equipping leadership with intelligence to pursue growth and mitigate risk</li>
+          <li>Developed and delivered quarterly board-level success reports communicating business trajectory with clarity and impact</li>
+          <li>Led win/loss analysis and root cause reviews to surface patterns, mitigate churn, and identify scalable improvement opportunities</li>
+          <li>Spearheaded strategic initiatives including "Innovation in 30 Days" — delivering on-time execution against defined KPIs</li>
+        </ul>
+        <div class="tl-skills">
+          <span class="tl-skill">ARR Forecasting</span><span class="tl-skill">CSM Operations</span><span class="tl-skill">Executive Reporting</span><span class="tl-skill">Stakeholder Management</span><span class="tl-skill">Revenue Analytics</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-header">
+          <div class="tl-role">Project Coordinator</div>
+          <div class="tl-company">eGain Corporation · Full-time</div>
+          <div class="tl-dates">December 2015 — October 2021 · Sunnyvale, CA</div>
+        </div>
+        <ul class="tl-bullets">
+          <li>Tracked and reported revenue targets versus actuals, equipping leadership with the intelligence needed for data-driven strategy</li>
+          <li>Conducted complex data analysis leveraging Pivot Tables, V/U Lookups, and Data Validation to surface trends and strengthen operational decision-making</li>
+          <li>Managed system access provisioning and PID configuration to ensure seamless project initiation and accurate tracking</li>
+          <li>Conducted monthly, quarterly, and annual budget reviews to maintain compliance with financial regulations</li>
+          <li>Identified variances exceeding 5% between actuals and planned results, initiating corrective actions and process improvements</li>
+          <li>Strengthened business profitability through SOW development with precise pricing models for billable and flat-rate engagements</li>
+        </ul>
+        <div class="tl-skills">
+          <span class="tl-skill">Budget Management</span><span class="tl-skill">SOW Development</span><span class="tl-skill">Data Analysis</span><span class="tl-skill">Excel Advanced</span><span class="tl-skill">PID Configuration</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-header">
+          <div class="tl-role">Jr. Accountant</div>
+          <div class="tl-company">eGain Communications · Full-time</div>
+          <div class="tl-dates">June 2010 — March 2012 · Sunnyvale, CA</div>
+        </div>
+        <ul class="tl-bullets">
+          <li>Directed monthly, quarterly, and annual closing activities including accruals, prepaid amortization, and AMEX reconciliations</li>
+          <li>Spearheaded migration of critical financial data from Oracle to NetSuite, ensuring continuity and minimizing operational disruption</li>
+          <li>Developed comprehensive training manuals for the AP cycle and NetSuite workflows, standardizing processes organization-wide</li>
+          <li>Administered high-volume domestic and international wire transfers with precision and strict adherence to internal controls</li>
+        </ul>
+        <div class="tl-skills">
+          <span class="tl-skill">NetSuite</span><span class="tl-skill">Oracle</span><span class="tl-skill">Month-End Close</span><span class="tl-skill">Wire Transfers</span><span class="tl-skill">Process Documentation</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-header">
+          <div class="tl-role">Accounts Payable Specialist</div>
+          <div class="tl-company">Tri County Insulation & Acoustical Contractors</div>
+          <div class="tl-dates">September 2015 — January 2016 · Santa Clara, CA</div>
+        </div>
+        <ul class="tl-bullets">
+          <li>Reviewed invoices for accuracy and worked with vendors to resolve discrepancies</li>
+          <li>Managed credit card reconciliation and worked closely with the controller on Balance Sheet and General Ledger</li>
+          <li>Documented and processed 1099s as required, ensuring compliance with reporting requirements</li>
+        </ul>
+        <div class="tl-skills">
+          <span class="tl-skill">Accounts Payable</span><span class="tl-skill">General Ledger</span><span class="tl-skill">1099 Processing</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-header">
+          <div class="tl-role">Accounts Payable Specialist</div>
+          <div class="tl-company">Apartment Search by CORT (Berkshire Hathaway Company)</div>
+          <div class="tl-dates">August 2005 — November 2008</div>
+        </div>
+        <ul class="tl-bullets">
+          <li>Managed weekly check runs and EFT payments to ensure timely order processing</li>
+          <li>Processed employee expense reports, created POs, and implemented approval processes</li>
+          <li>Uploaded and reviewed journal entry files to ensure completeness and accuracy</li>
+        </ul>
+        <div class="tl-skills">
+          <span class="tl-skill">EFT Payments</span><span class="tl-skill">PO Management</span><span class="tl-skill">Journal Entries</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="section-line"></div><span>Education</span></div>
+    <h2 class="section-title reveal">Academic Background</h2>
+    <p class="section-sub reveal">Combining a strong business foundation with advanced graduate study in strategy and technology.</p>
+    <div class="edu-grid reveal">
+      <div class="edu-card">
+        <div class="edu-degree">Master of Business Administration</div>
+        <div class="edu-school">Illinois Institute of Technology</div>
+        <div class="edu-dates">July 2024 — June 2027 · In Progress</div>
+        <div class="edu-detail">Business & Technology focus. Developing advanced competencies in financial strategy, organizational leadership, data-driven decision-making, and business innovation.</div>
+        <span class="edu-badge">GPA: 3.52 · In Progress</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Bachelor of Science — Business Administration</div>
+        <div class="edu-school">San José State University</div>
+        <div class="edu-dates">2006 — 2009 · Accounting Concentration</div>
+        <div class="edu-detail">Accounting concentration with coursework in Federal Taxation, Intermediate Accounting, Operational Auditing, Financial Auditing, and Special Topics in Financial Reporting.</div>
+        <span class="edu-badge" style="background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.2);color:var(--gold);">Accounting · GAAP · Audit</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="section-line"></div><span>Skills</span></div>
+    <h2 class="section-title reveal">Technical & Professional Skills</h2>
+    <div class="skills-outer reveal">
+      <div>
+        <div class="skills-group-title">Technical Proficiency</div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Microsoft Excel (Advanced)</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">NetSuite ERP</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Financial Reporting & ARR Analysis</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Budget Management & Forecasting</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Data Analysis (Pivot Tables, VLOOKUP)</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Microsoft Office Suite</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Oracle ERP</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+      </div>
+      <div>
+        <div class="skills-group-title">Professional Strengths</div>
+        <div class="soft-skills">
+          <span class="soft-skill">Executive Communication</span>
+          <span class="soft-skill">Stakeholder Management</span>
+          <span class="soft-skill">Cross-functional Leadership</span>
+          <span class="soft-skill">Strategic Planning</span>
+          <span class="soft-skill">Process Documentation</span>
+          <span class="soft-skill">Analytical Thinking</span>
+          <span class="soft-skill">Revenue Operations</span>
+          <span class="soft-skill">Team Collaboration</span>
+          <span class="soft-skill">Adaptability</span>
+          <span class="soft-skill">Detail Orientation</span>
+          <span class="soft-skill">Problem Solving</span>
+          <span class="soft-skill">Project Management</span>
+          <span class="soft-skill">Public Sector Experience</span>
+          <span class="soft-skill">Remote Work Excellence</span>
+        </div>
+        <div style="margin-top:28px;">
+          <div class="skills-group-title">Certifications</div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
+            <div style="padding:12px 16px;border:1px solid rgba(201,168,76,.15);font-size:.82rem;color:rgba(255,255,255,.6);">
+              <div style="color:var(--gold);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;">LinkedIn Learning · June 2022</div>
+              Salesforce Administrator Cert Prep: Introduction to Admin Certification
+            </div>
+            <div style="padding:12px 16px;border:1px solid rgba(201,168,76,.15);font-size:.82rem;color:rgba(255,255,255,.6);">
+              <div style="color:var(--gold);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;">LinkedIn Learning · June 2022</div>
+              Salesforce Essential Training
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="section-line"></div><span>Beyond the Job Title</span></div>
+    <h2 class="section-title reveal">Expanding Capabilities</h2>
+    <p class="section-sub reveal">Through MBA coursework, independent research, and self-directed learning, I have developed capabilities that extend well beyond my formal roles — and that I am actively bringing to my next chapter.</p>
+    <div class="cap-grid reveal">
+
+      <div class="cap-card">
+        <div class="cap-top"><div class="cap-icon">🗺️</div><div class="cap-source">MBA + Independent Study</div></div>
+        <div class="cap-title">Strategic Planning & Business Analysis</div>
+        <div class="cap-body">Through graduate-level study in business strategy, financial modeling, and organizational theory, I have developed the ability to assess competitive landscapes, evaluate strategic options, and build actionable business cases. I apply a systems-thinking lens to understand how decisions ripple across an organization — translating complexity into clear direction.</div>
+        <div class="cap-examples">
+          <div class="cap-ex-label">Applied Through</div>
+          <div class="cap-ex-tags"><span class="cap-tag">MBA Strategy Coursework</span><span class="cap-tag">Business Case Development</span><span class="cap-tag">Organizational Analysis</span><span class="cap-tag">Financial Modeling</span></div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-top"><div class="cap-icon">🔬</div><div class="cap-source">Independent Research + MBA</div></div>
+        <div class="cap-title">Research & Data-Driven Decision Making</div>
+        <div class="cap-body">I am an independent researcher by nature — I read academic papers, follow economic research, and synthesize complex information into clear insights. My graduate coursework has formalized this into structured research methodology, literature review, and evidence-based analysis. I know how to ask the right questions and find rigorous, credible answers.</div>
+        <div class="cap-examples">
+          <div class="cap-ex-label">Applied Through</div>
+          <div class="cap-ex-tags"><span class="cap-tag">Independent Research Practice</span><span class="cap-tag">Academic Literature Review</span><span class="cap-tag">Behavioral Economics Study</span><span class="cap-tag">NBER & SSRN Reading</span></div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-top"><div class="cap-icon">🔄</div><div class="cap-source">MBA Coursework</div></div>
+        <div class="cap-title">Change Management & Organizational Improvement</div>
+        <div class="cap-body">My graduate studies in organizational change and transformational leadership — drawing on frameworks including McKinsey's Influence Model, stakeholder mapping, and structured change methodology — have given me a rigorous foundation for leading people through transitions. I understand both the technical and human dimensions of organizational change.</div>
+        <div class="cap-examples">
+          <div class="cap-ex-label">Applied Through</div>
+          <div class="cap-ex-tags"><span class="cap-tag">McKinsey Influence Model</span><span class="cap-tag">Stakeholder Mapping</span><span class="cap-tag">Transformational Leadership</span><span class="cap-tag">Four-Act Change Model</span></div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-top"><div class="cap-icon">🏛️</div><div class="cap-source">Work Experience + Independent Research</div></div>
+        <div class="cap-title">Policy Analysis & Public Sector Work</div>
+        <div class="cap-body">I have direct experience supporting public sector clients and participating in security clearance processes at eGain. Combined with independent research in behavioral economics and public policy — how governments design programs, why policies succeed or fail, and how behavioral insights improve outcomes — I bring an analytically grounded perspective to public-sector-adjacent work.</div>
+        <div class="cap-examples">
+          <div class="cap-ex-label">Applied Through</div>
+          <div class="cap-ex-tags"><span class="cap-tag">Public Sector Client Work</span><span class="cap-tag">Security Clearance Process</span><span class="cap-tag">Behavioral Policy Research</span><span class="cap-tag">Public Economics Study</span></div>
+        </div>
+      </div>
+
+      <div class="cap-card" style="grid-column:span 2;">
+        <div class="cap-top"><div class="cap-icon">🚀</div><div class="cap-source">Personal Projects + Self-Directed Learning</div></div>
+        <div class="cap-title">Entrepreneurship & Building From Scratch</div>
+        <div class="cap-body">Outside of formal employment, I have developed a genuine entrepreneurial capability — designing systems, building products, and creating things that didn't exist before. I have independently developed full-featured product concepts, built consulting frameworks, and taught myself to navigate complex technical and strategic problems without a playbook. I am comfortable with ambiguity, energized by starting from zero, and driven by the belief that the right system can solve almost any problem. This is not a future aspiration — it is how I already operate.</div>
+        <div class="cap-examples">
+          <div class="cap-ex-label">Applied Through</div>
+          <div class="cap-ex-tags"><span class="cap-tag">Product Design & Development</span><span class="cap-tag">Consulting Practice Building</span><span class="cap-tag">Self-Directed Learning</span><span class="cap-tag">Systems Thinking</span><span class="cap-tag">Problem Framing</span><span class="cap-tag">Independent Execution</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEERING -->
+<section id="volunteering">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="section-line"></div><span>Community</span></div>
+    <h2 class="section-title reveal">Volunteering & Community</h2>
+    <p class="section-sub reveal">Giving back through leadership, coaching, and community service.</p>
+    <div class="vol-grid reveal">
+      <div class="vol-card">
+        <div class="vol-role">T-Ball Team Manager & Head Coach</div>
+        <div class="vol-org">Sunnyvale Meteo Little League</div>
+        <div class="vol-dates">March 2017 — July 2017</div>
+        <div class="vol-desc">Managed and coached a youth T-ball team, developing leadership, teamwork, and sportsmanship skills in young players while coordinating team logistics and parent communications.</div>
+      </div>
+      <div class="vol-card">
+        <div class="vol-role">Head Coach — Kindergarten Basketball</div>
+        <div class="vol-org">City of Sunnyvale · SYBL</div>
+        <div class="vol-dates">January 2019 — March 2019</div>
+        <div class="vol-desc">Led a co-ed kindergarten basketball team, fostering fundamentals, confidence, and love of sport in young children through positive, encouraging coaching.</div>
+      </div>
+      <div class="vol-card">
+        <div class="vol-role">Volunteer Advocate</div>
+        <div class="vol-org">Multiple Causes</div>
+        <div class="vol-dates">Ongoing</div>
+        <div class="vol-desc">Committed to causes including education, child welfare, economic empowerment, health, racial justice, environmental sustainability, human rights, and poverty alleviation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-inner reveal">
+      <div class="contact-left">
+        <div class="section-eyebrow"><div class="section-line"></div><span>Let's Connect</span></div>
+        <h2 class="section-title">Ready to Bring Results to Your Organization</h2>
+        <p class="contact-tagline">I am available for remote contract, fractional, and full-time opportunities in finance operations, revenue analytics, and customer success operations. Let's talk about what you need.</p>
+        <a href="https://www.linkedin.com/in/patricia-sandhu-0202a9a/" target="_blank" class="btn-primary">Connect on LinkedIn →</a>
+      </div>
+      <div class="contact-right">
+        <a href="https://www.linkedin.com/in/patricia-sandhu-0202a9a/" target="_blank" class="contact-item">
+          <div class="contact-icon">💼</div>
+          <div>
+            <div class="contact-info-label">LinkedIn</div>
+            <div class="contact-info-val">linkedin.com/in/patricia-sandhu-0202a9a</div>
+          </div>
+        </a>
+        <div class="contact-item" style="cursor:default;">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-info-label">Location</div>
+            <div class="contact-info-val">Folsom, CA · Open to Remote</div>
+          </div>
+        </div>
+        <div class="contact-item" style="cursor:default;">
+          <div class="contact-icon">🟢</div>
+          <div>
+            <div class="contact-info-label">Availability</div>
+            <div class="contact-info-val">Open to contract & full-time roles</div>
+          </div>
+        </div>
+        <div class="contact-item" style="cursor:default;">
+          <div class="contact-icon">🎓</div>
+          <div>
+            <div class="contact-info-label">Education in Progress</div>
+            <div class="contact-info-val">MBA · Illinois Institute of Technology · 2027</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2026 <span class="footer-name">Patricia Sandhu</span> · All rights reserved</div>
+    <div style="font-size:.72rem;color:rgba(255,255,255,.25);">Finance & Operations Professional · Folsom, CA</div>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);
+});
+
+// Mobile menu
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open');}
+
+// Scroll reveal
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Animate skill bars on scroll
+const skillObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.skill-fill').forEach(bar=>{
+        const w=bar.style.width;
+        bar.style.width='0%';
+        setTimeout(()=>{bar.style.width=w;},100);
+      });
+    }
+  });
+},{threshold:.3});
+document.querySelectorAll('.skills-outer').forEach(el=>skillObserver.observe(el));
+</script>
+</body>
+</html>
